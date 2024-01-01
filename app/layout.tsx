@@ -9,6 +9,8 @@ import RegisterModal from './components/modal/RegisterModal'
 import TosterProvider from './providers/TosterProvider'
 
 
+import RegisterModel from './components/modal/RegisterModal'
+import ToasterProvider from './provider/TosterProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ClientOnly>
-        <TosterProvider/>
+          <TosterProvider/>
         <RegisterModal/>
         <Navbar />
         </ClientOnly>

@@ -8,10 +8,10 @@ import Modal from './components/modal/modal'
 import RegisterModal from './components/modal/RegisterModal'
 import TosterProvider from './providers/TosterProvider'
 
-
 import RegisterModel from './components/modal/RegisterModal'
 import ToasterProvider from './provider/TosterProvider'
-
+import LoginModal from './components/modal/LoginModal'
+import getCurrentUser from './action/getCurrentUser'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -23,18 +23,21 @@ const font =Nunito({
 });
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const currnetUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <ClientOnly>
           <TosterProvider/>
         <RegisterModal/>
-        <Navbar />
+        <LoginModal/>
+        <Navbar currentUser={currnetUser}/>
         </ClientOnly>
         
         

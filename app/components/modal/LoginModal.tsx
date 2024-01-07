@@ -22,8 +22,10 @@ import { useRouter } from "next/navigation";
 import{ signIn } from "next-auth/react";
 
 const RegisterModal= () => {
+
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+
   const [isLoading, setIsLoading] = useState(false);
    const router = useRouter();
   const { 
@@ -63,6 +65,10 @@ const RegisterModal= () => {
     
   }, [registerModal,])
 
+  const Toggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [ loginModal, registerModal])
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading
@@ -112,15 +118,15 @@ const RegisterModal= () => {
           font-light
         "
       >
-        <p>Already have an account?
+        <p>First time using Airbnb?
           <span 
-            onClick={onToggle} 
+            onClick={Toggle} 
             className="
               text-neutral-800
               cursor-pointer 
               hover:underline
             "
-            > Log in</span>
+            > Create an account</span>
         </p>
       </div>
     </div>

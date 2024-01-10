@@ -38,8 +38,10 @@ export default async function RootLayout({
         <Navbar currentUser={currnetUser}/>
         </ClientOnly>
         
-        
-        {children}</body>
+        <div className='pd-20 pt-28'>
+        {children}
+        </div>
+        </body>
     </html>
   )
 }

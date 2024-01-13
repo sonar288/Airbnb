@@ -5,7 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 interface CounterProps{
     title:string;
-    sutitle:string;
+    subtitle:string;
     value:number;
     onChange:(value:number)=>void;
 }
@@ -13,7 +13,7 @@ interface CounterProps{
 
 const Counter: React.FC<CounterProps> = ({
     title,
-    sutitle,
+    subtitle,
     value,
     onChange
 }) =>{
@@ -35,7 +35,7 @@ const Counter: React.FC<CounterProps> = ({
                     {title}
                 </div>
                 <div className="font-light text-gray-600">
-                    {sutitle}
+                    {subtitle}
                 </div>
             </div>
             <div className="flex flex-row items-counter gap-4">

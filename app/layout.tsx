@@ -9,6 +9,7 @@ import TosterProvider from './providers/TosterProvider'
 import LoginModal from './components/modal/LoginModal'
 import getCurrentUser from './action/getCurrentUser'
 import RentModal from './components/modal/RentModal'
+import SearchModal from './components/modal/searchModal'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ClientOnly>
           <TosterProvider/>
+          <SearchModal/>
           <RentModal/>
         <RegisterModal/>
         <LoginModal/>

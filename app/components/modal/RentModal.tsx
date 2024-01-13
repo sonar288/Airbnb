@@ -65,7 +65,7 @@ const RentModal =()=>{
     const imageSrc = watch("imageSrc");
      const Map = useMemo(() => dynamic(() => import('../Map'), { 
         ssr: false 
-      }), [Location]);
+      }), []);
      const setCustomValue = (id:string, value:any)=>{
         setValue(id,value,{
             shouldDirty:true,
@@ -156,19 +156,19 @@ const RentModal =()=>{
                         />
                         <Counter
                         title="Guest"
-                        sutitle="How many guest do you allow?"
+                        subtitle="How many guest do you allow?"
                         value={guestCount}
                         onChange={(value)=> setCustomValue('guestCount',value)}/>
                         <hr />
                         <Counter
                         title="Rooms"
-                        sutitle="How many rooms do you have?"
+                        subtitle="How many rooms do you have?"
                         value={roomCount}
                         onChange={(value)=> setCustomValue('roomCount',value)}/>
                         <hr />
                         <Counter
                         title="Bathrooms"
-                        sutitle="How many Bathrooms do you have?"
+                        subtitle="How many Bathrooms do you have?"
                         value={bathroomCount}
                         onChange={(value)=> setCustomValue('bathroomCount',value)}/>
                     </div>
